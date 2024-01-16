@@ -1,9 +1,14 @@
-import Hello from "./Hello"; 
+// import Hello from "./Hello";
+import FoodItems from "./components/FoodItems"; 
+import ErrorMassage from "./components/ErrorMassage";
 function App(){
-  return <div>
-    <h1>hlw this is my new project</h1>
+  let foodItems =['dal','goru','murgi','dim','milk','water'];
+  // let foodItems=[];
+  return <>
+   <center><h1>healty food</h1></center> 
+  <FoodItems items={foodItems}></FoodItems>
+  <ErrorMassage items={foodItems}></ErrorMassage>
     
-    <Hello></Hello>
-  </div>
+  </>
 }
 export default App ; 
