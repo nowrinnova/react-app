@@ -1,0 +1,8 @@
+.display{
+  width: 65%;
+  height: 50px;
+  border: 2px solid rgb(148, 134, 134);
+  border-radius: 4px;
+  margin: 10px;
+
+}

@@ -12,6 +12,10 @@ function App() {
       name: "nowsaba",
       date: "12/2/2023",
     },
+    {
+      name: "nasrin",
+      date: "12/2/2023",
+    },
   ];
   return (
     <>
