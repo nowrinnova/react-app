@@ -6,13 +6,12 @@ import FoodInput from "./components/FoodInput";
 import { useState } from "react";
 function App() {
   let [foodItems,setFoodItems]=useState(['sabji','dal','roti'])
-  
-
   let [textToShow ,setTextState]=useState("Food Item Is Entered By Users");
 
   const onKeyDown = (event) => {
     if (event.key==='Enter'){
       let newFoodItem=event.target.value;
+      event.target.value='';
       let newFoodItems=[...foodItems, newFoodItem];
       setFoodItems(newFoodItems);
       setTextState(`new item added:${newFoodItem}`);
