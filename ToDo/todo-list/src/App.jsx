@@ -2,6 +2,7 @@ import "./App.css";
 import Addname from "./components/Addname";
 import Addtodo from "./Addtodo";
 import Todoitems from "./components/Todoitems";
+import WelcomeMassage from  "./components/WelcomeMassage"
 import { useState } from "react";
 function App() {
   const initialtodoelement = [
@@ -22,16 +23,22 @@ function App() {
   let [todoElement, setTodoElement] = useState(initialtodoelement);
   const handleNewItem = (name, date) => {
     console.log(`user name:${name} and date is ${date}`);
-    const newTodoItem=[...todoElement,{name:name,date:date}];
-    setTodoElement(newTodoItem);
+    const newTodoItems=[...todoElement,{name:name,date:date}];
+    setTodoElement(newTodoItems);
 
   };
+  const handleDeleteItem=(todoname)=>{
+    const newTodoItems=todoElement.filter((item)=>item.name !== todoname);
+    setTodoElement(newTodoItems);
+
+  }
   return (
     <>
       <center>
         <Addname></Addname>
         <Addtodo onNewItem={handleNewItem}></Addtodo>
-        <Todoitems todoItem={todoElement}></Todoitems>
+        {todoElement.length===0 && <WelcomeMassage></WelcomeMassage>}
+        <Todoitems todoItem={todoElement} onDeleteItem={handleDeleteItem}></Todoitems>
       </center>
     </>
   );
