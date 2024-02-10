@@ -22,13 +22,16 @@ function App() {
   let [todoElement, setTodoElement] = useState(initialtodoelement);
   const handleNewItem = (name, date) => {
     console.log(`user name:${name} and date is ${date}`);
+    const newTodoItem=[...todoElement,{name:name,date:date}];
+    setTodoElement(newTodoItem);
+
   };
   return (
     <>
       <center>
         <Addname></Addname>
         <Addtodo onNewItem={handleNewItem}></Addtodo>
-        <Todoitems todoItem={initialtodoelement}></Todoitems>
+        <Todoitems todoItem={todoElement}></Todoitems>
       </center>
     </>
   );
