@@ -1,0 +1,33 @@
+.container{
+  height: 50px;
+  width: 100%;
+  background-color: rgb(213, 100, 7);
+  border: 1px solid black;
+}
+.dot1{
+  border: 1px solid rgb(199, 43, 0);
+  border-radius: 50%;
+  font-size: 10px;
+  margin-left: 5px;
+  color: rgb(199, 43, 0);;
+  background-color: rgb(199, 43, 0);
+}
+.dot2{
+  border: 1px solid rgb(240, 243, 48);
+  border-radius: 50%;
+  font-size: 10px;
+  margin-left: 5px;
+  color: rgb(240, 243, 48);
+  background-color: rgb(240, 243, 48);
+}
+.dot3{
+  border: 1px solid rgb(48, 142, 4);
+  border-radius: 50%;
+  font-size: 10px;
+  margin-left: 5px;
+  color:rgb(48, 142, 4) ;
+  background-color: rgb(48, 142, 4);
+}
+.menu_bar{
+  color: black;
+}
