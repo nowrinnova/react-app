@@ -6,8 +6,8 @@ const Container = () => {
         <span className={styles.dot1}></span>
         <span className={styles.dot2}></span>
         <span className={styles.dot3}></span>
-        <div class={styles.menu_bar}>
-          <i class="fa-solid fa-bars"></i>
+        <div className={styles.menu_bar}>
+          <i className="fa-solid fa-bars"></i>
         </div>
       </div>
     </>

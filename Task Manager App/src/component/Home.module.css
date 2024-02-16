@@ -1,0 +1,25 @@
+.container{
+  height: 600px;
+  width: 100%;
+  display: flex;
+}
+.left_container{
+  background-color: #efeaea;
+  height: 100%;
+  width: 20%;
+}
+.right_container{
+  background-color: #ffffff;
+  height: 100%;
+  width: 80%;
+}
+.right_container_navbar{
+  display: flex;
+  justify-content: space-evenly;
+}
+.navbar_heading_right{
+  margin-left: 130px;
+}
+.navbar_heading_right i{
+margin-left: 12px;
+}
