@@ -1,0 +1,15 @@
+.addToDo_container{
+  display: flex;
+  margin: 5px;
+  justify-content: space-evenly;
+  margin-top: 15px;
+
+}
+.addToDo{
+  height: 30px;
+  width: 75px;
+  border: none;
+  border-radius: 4px;
+  background-color: #146d0c;
+  color: aliceblue;
+}
