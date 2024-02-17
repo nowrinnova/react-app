@@ -13,3 +13,11 @@
   background-color: #146d0c;
   color: aliceblue;
 }
+.removeToDo{
+  height: 30px;
+  width: 75px;
+  border: none;
+  border-radius: 4px;
+  background-color: #ce350b;
+  color: aliceblue;
+}

@@ -1,6 +1,7 @@
 import AddToDo from "./AddToDo";
+import ToDoItems from "./ToDoItems";
 import styles from "./Home.module.css";
-const Home = () => {
+const Home = ({todoList}) => {
   return (
     <>
       <div className={styles.container}>
@@ -17,6 +18,7 @@ const Home = () => {
           </div>
           <hr />
           <AddToDo></AddToDo>
+          <ToDoItems todoList={todoList}></ToDoItems>
         </div>
       </div>
     </>
