@@ -1,7 +1,7 @@
 import AddToDo from "./AddToDo";
 import ToDoItems from "./ToDoItems";
 import styles from "./Home.module.css";
-const Home = ({todoList}) => {
+const Home = ({todoList ,onNewItem , onDeleteItem}) => {
   return (
     <>
       <div className={styles.container}>
@@ -17,8 +17,8 @@ const Home = ({todoList}) => {
             </div>
           </div>
           <hr />
-          <AddToDo></AddToDo>
-          <ToDoItems todoList={todoList}></ToDoItems>
+          <AddToDo onNewItem={onNewItem}></AddToDo>
+          <ToDoItems todoList={todoList} onDeleteItem={onDeleteItem}></ToDoItems>
         </div>
       </div>
     </>

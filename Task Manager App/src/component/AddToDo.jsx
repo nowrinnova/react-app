@@ -1,5 +1,19 @@
+import { useState } from "react";
 import styles from "./AddToDo.module.css";
-const AddToDo = () => {
+const AddToDo = ({ onNewItem }) => {
+  const [todoName, setTodoName] = useState();
+  const [todoDate, setTodoDate] = useState();
+  const handleTodoName = (event) => {
+    setTodoName(event.target.value);
+  };
+  const handleTodoDate = (event) => {
+    setTodoDate(event.target.value);
+  };
+  const HandleAddTodo = () => {
+    onNewItem(todoName, todoDate);
+    setTodoName("");
+    setTodoDate("");
+  };
   return (
     <>
       <center>
@@ -11,13 +25,24 @@ const AddToDo = () => {
         <div className="container text-center">
           <div className="row">
             <div className="col-4">
-              <input className="addName" type="text" placeholder="add task" />
+              <input
+                className="addName"
+                type="text"
+                placeholder="add task"
+                onChange={handleTodoName}
+              />
             </div>
             <div className="col-4">
-              <input className="addDate" type="date" />
+              <input
+                className="addDate"
+                type="date"
+                onChange={handleTodoDate}
+              />
             </div>
             <div className="col-2">
-              <button className={styles.addToDo}>Add</button>
+              <button className={styles.addToDo} onClick={HandleAddTodo}>
+                Add
+              </button>
             </div>
           </div>
         </div>

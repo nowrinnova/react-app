@@ -1,9 +1,9 @@
 import TodoItem from "./ToDoItem";
 
-const ToDoItems = ({todoList}) => {
+const ToDoItems = ({todoList, onDeleteItem}) => {
   return <>
    {todoList.map((item) => (
-          <TodoItem todoname={item.name} tododate={item.date} ></TodoItem>
+          <TodoItem todoname={item.name} tododate={item.date} onDeleteItem={onDeleteItem} ></TodoItem>
         ))}
   </>;
 };

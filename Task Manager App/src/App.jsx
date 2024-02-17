@@ -1,7 +1,8 @@
+import { useState } from "react";
 import Header from "./component/Header";
 import Home from "./component/Home";
 function App() {
-  const todoList=[{
+  const initialtodoList=[{
     name:"Bye Milk",
     date:"17/2/2024",
   },
@@ -10,10 +11,21 @@ function App() {
     date:"18/2/2024",
   }
 ]
+const [todoList,setTodoList]=useState(initialtodoList);
+const handleNewItem =(name,date)=>{
+  console.log(`user name:${name} and date is ${date}`);
+  const newTodoList=[...todoList,{name:name,date:date}]
+  setTodoList(newTodoList);
+}
+const handleDeleteItem =(todoname)=>{
+  const newTodoList = todoList.filter((item)=>item.name !== todoname) ;
+  setTodoList(newTodoList);
+
+}
   return (
     <>
       <Header></Header>
-      <Home todoList={todoList}></Home>
+      <Home todoList={todoList} onNewItem={handleNewItem} onDeleteItem={handleDeleteItem}></Home>
       
     </>
   );

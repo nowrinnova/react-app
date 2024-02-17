@@ -1,5 +1,5 @@
 import styles from "./AddToDo.module.css";
-const TodoItem = ({todoname ,tododate}) => {
+const TodoItem = ({todoname ,tododate ,onDeleteItem}) => {
   return (
     <>
       {" "}
@@ -12,7 +12,7 @@ const TodoItem = ({todoname ,tododate}) => {
            {tododate}
           </div>
           <div className="col-2">
-            <button className={styles.removeToDo}>remove</button>
+            <button className={styles.removeToDo} onClick={()=>onDeleteItem(todoname)}>remove</button>
           </div>
         </div>
       </div>
