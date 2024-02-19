@@ -3,7 +3,7 @@ function Display() {
   return (
     <>
       <center>
-        <input type="text" className={style.display} />
+        <input type="text" className={style.display} readOnly />
       </center>
     </>
   );
