@@ -1,4 +1,5 @@
 import styles from "./AddToDo.module.css";
+import { AiFillDelete } from "react-icons/ai";
 const TodoItem = ({todoname ,tododate ,onDeleteItem}) => {
   return (
     <>
@@ -12,7 +13,7 @@ const TodoItem = ({todoname ,tododate ,onDeleteItem}) => {
            {tododate}
           </div>
           <div className="col-2">
-            <button className={styles.removeToDo} onClick={()=>onDeleteItem(todoname)}>remove</button>
+            <button className={styles.removeToDo} onClick={()=>onDeleteItem(todoname)}> <AiFillDelete /></button>
           </div>
         </div>
       </div>

@@ -1,5 +1,6 @@
 import { useState } from "react";
 import styles from "./AddToDo.module.css";
+import { IoAdd } from "react-icons/io5";
 const AddToDo = ({ onNewItem }) => {
   const [todoName, setTodoName] = useState();
   const [todoDate, setTodoDate] = useState();
@@ -23,7 +24,7 @@ const AddToDo = ({ onNewItem }) => {
       </center>
       <div className={styles.addToDo_container}>
         <div className="container text-center">
-          <div className="row">
+          <form className="row"  onSubmit={HandleAddTodo}>
             <div className="col-4">
               <input
                 className="addName"
@@ -40,11 +41,11 @@ const AddToDo = ({ onNewItem }) => {
               />
             </div>
             <div className="col-2">
-              <button className={styles.addToDo} onClick={HandleAddTodo}>
-                Add
+              <button className={styles.addToDo} >
+                <IoAdd />
               </button>
             </div>
-          </div>
+          </form>
         </div>
       </div>
     </>
