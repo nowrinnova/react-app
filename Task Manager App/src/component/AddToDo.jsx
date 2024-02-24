@@ -1,14 +1,17 @@
-import { useState } from "react";
+import { useState,useRef } from "react";
 import styles from "./AddToDo.module.css";
 import { IoAdd } from "react-icons/io5";
 const AddToDo = ({ onNewItem }) => {
   const [todoName, setTodoName] = useState();
   const [todoDate, setTodoDate] = useState();
+  const noOfUpdates=useRef(1);
   const handleTodoName = (event) => {
     setTodoName(event.target.value);
+    noOfUpdates.current +=1;
   };
   const handleTodoDate = (event) => {
     setTodoDate(event.target.value);
+    console.log(noOfUpdates);
   };
   const HandleAddTodo = (event) => {
     event.preventDefault();
