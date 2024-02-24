@@ -11,11 +11,8 @@ const AddToDo = ({ onNewItem }) => {
     setTodoDate(event.target.value);
   };
   const HandleAddTodo = (event) => {
-event.preventDefault();
-console.log(event);
-    // onNewItem(todoName, todoDate);
-    // setTodoName("");
-    // setTodoDate("");
+    event.preventDefault();
+    console.log(event);
   };
   return (
     <>
@@ -26,7 +23,7 @@ console.log(event);
       </center>
       <div className={styles.addToDo_container}>
         <div className="container text-center">
-          <form className="row"  onSubmit={HandleAddTodo}>
+          <form className="row" onSubmit={HandleAddTodo}>
             <div className="col-4">
               <input
                 className="addName"
@@ -43,7 +40,7 @@ console.log(event);
               />
             </div>
             <div className="col-2">
-              <button className={styles.addToDo} >
+              <button className={styles.addToDo}>
                 <IoAdd />
               </button>
             </div>
