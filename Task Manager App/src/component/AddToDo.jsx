@@ -10,10 +10,12 @@ const AddToDo = ({ onNewItem }) => {
   const handleTodoDate = (event) => {
     setTodoDate(event.target.value);
   };
-  const HandleAddTodo = () => {
-    onNewItem(todoName, todoDate);
-    setTodoName("");
-    setTodoDate("");
+  const HandleAddTodo = (event) => {
+event.preventDefault();
+console.log(event);
+    // onNewItem(todoName, todoDate);
+    // setTodoName("");
+    // setTodoDate("");
   };
   return (
     <>
