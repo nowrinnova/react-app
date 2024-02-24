@@ -2,20 +2,15 @@ import { useState,useRef } from "react";
 import styles from "./AddToDo.module.css";
 import { IoAdd } from "react-icons/io5";
 const AddToDo = ({ onNewItem }) => {
-  const [todoName, setTodoName] = useState();
-  const [todoDate, setTodoDate] = useState();
-  const noOfUpdates=useRef(1);
-  const handleTodoName = (event) => {
-    setTodoName(event.target.value);
-    noOfUpdates.current +=1;
-  };
-  const handleTodoDate = (event) => {
-    setTodoDate(event.target.value);
-    console.log(noOfUpdates);
-  };
+  const todoNameElement =useRef();
+  const todoDateElement =useRef();
+ 
+  
   const HandleAddTodo = (event) => {
     event.preventDefault();
-    console.log(event);
+    // const todoDate= todoDateElement.current.value;
+    // const todoName= todoNameElement.current.value;
+    onNewItem(todoNameElement.current.value,todoDateElement.current.value);
   };
   return (
     <>
@@ -32,14 +27,16 @@ const AddToDo = ({ onNewItem }) => {
                 className="addName"
                 type="text"
                 placeholder="add task"
-                onChange={handleTodoName}
+                ref={todoNameElement}
+                
               />
             </div>
             <div className="col-4">
               <input
                 className="addDate"
                 type="date"
-                onChange={handleTodoDate}
+                ref={todoDateElement}
+                
               />
             </div>
             <div className="col-2">
