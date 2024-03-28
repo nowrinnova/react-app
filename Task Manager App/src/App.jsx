@@ -12,11 +12,18 @@ function App() {
   }
 ]
 const [todoList,setTodoList]=useState(initialtodoList);
+// const handleNewItem =(name,date)=>{
+//   console.log(`user name:${name} and date is ${date}`);
+                                                          //[---another way to add new array to old array ]
+//   const newTodoList=[...todoList,{name:name,date:date}]
+//   setTodoList(newTodoList);
+// }
 const handleNewItem =(name,date)=>{
   console.log(`user name:${name} and date is ${date}`);
-  const newTodoList=[...todoList,{name:name,date:date}]
-  setTodoList(newTodoList);
+  setTodoList((currentVal)=>[...currentVal,{name:name,date:date}
+  ]);
 }
+
 const handleDeleteItem =(todoname)=>{
   const newTodoList = todoList.filter((item)=>item.name !== todoname) ;
   setTodoList(newTodoList);
