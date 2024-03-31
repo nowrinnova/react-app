@@ -1,13 +1,16 @@
-import './App.css'
-import SideBar from './components/SideBar'
+import "./App.css";
+import PostList from "./components/PostList";
+import SideBar from "./components/SideBar";
 
 function App() {
- 
-
   return (
-    <><SideBar></SideBar>
-      </>
-  )
+    <>
+      <div className="container">
+        <SideBar></SideBar>
+        <PostList></PostList>
+      </div>
+    </>
+  );
 }
 
-export default App
+export default App;
