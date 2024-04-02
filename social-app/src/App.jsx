@@ -6,13 +6,14 @@ import SideBar from "./components/SideBar";
 import PostListProvider from "./store/post-list-store";
 
 function App() {
-  const [state, setState] = useState("Create Post");
+  const [state, setState] = useState("Home");
   return (
-    <PostListProvider >
-      {" "}
+    <PostListProvider>
       <div className="container">
         <SideBar state={state} setState={setState}></SideBar>
-        {state === "Home" ? <PostList></PostList> : <CreatePost></CreatePost>}
+        <div>
+          {state === "Home" ? <PostList></PostList> : <CreatePost></CreatePost>}
+        </div>
       </div>
     </PostListProvider>
   );

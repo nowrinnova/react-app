@@ -1,3 +1,20 @@
 .container{
   display: flex;
 }
+.hastag{
+  margin-right: 5px;
+}
+.reaction{
+  margin-top: 15px;
+}
+.card-container{
+  margin: 10px;
+}
+.create-post{
+  width: 170%;
+  margin: 10%;
+  border: 1px solid black;
+}
+.create-post-container{
+  margin: 2%;
+}
