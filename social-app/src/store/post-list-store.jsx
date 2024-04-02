@@ -43,7 +43,7 @@ const DEFULT_POST_LIST = [
     title: "Going to Mumbai for celebrating vacation",
     body: "go to bed",
     hastag: ["vacation", "happy"],
-    reaction: "3",
+    reactions: "3",
   },
   {
     id: "2",
