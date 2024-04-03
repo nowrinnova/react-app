@@ -12,15 +12,28 @@ const postListReducer = (currPostList, action) => {
     newPostList = currPostList.filter(
       (post) => post.id !== action.payload.postId
     );
-    
+  }
+  else if(action.type==="Add_Post"){
+    newPostList=[action.payload ,...currPostList]
   }
   return newPostList;
 };
 const PostListProvider = ({ children }) => {
   const [postList, dispatch] = useReducer(postListReducer, DEFULT_POST_LIST);
-  const addPost = () => {
+  const addPost = (userId,title,body,reactions,hastag) => {
+    console.log(`${userId}  ${title} ${ body} ${reactions} ${hastag}`)
+
     dispatch({
       type:"Add_Post",
+      payload:{
+        id: Math.random(),
+        userId:userId,
+        title: title,
+        body:body,
+        reactions: reactions,
+        hastag: [hastag],
+        
+      }
     })
   };
   const deletePost = (postId) => {
@@ -40,6 +53,7 @@ const PostListProvider = ({ children }) => {
 const DEFULT_POST_LIST = [
   {
     id: "1",
+    userId:"user-19",
     title: "Going to Mumbai for celebrating vacation",
     body: "go to bed",
     hastag: ["vacation", "happy"],
@@ -47,6 +61,7 @@ const DEFULT_POST_LIST = [
   },
   {
     id: "2",
+    userId:'user-9',
     title: "hi",
     body: "go to bed",
     hastag: ["sleepMood", "GoodNight"],
