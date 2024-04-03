@@ -1,6 +1,8 @@
-import React from "react";
+import React, { useRef } from "react";
 
 function CreatePost() {
+  const userIdElement=useRef()
+  const titleElement =useRef()
   return (
     <div >
       <form className="create-post" >
@@ -13,7 +15,7 @@ function CreatePost() {
             type="text"
             className="form-control"
             id="userId"
-            placeholder="Your User Id"
+            placeholder="Your User Id" ref={userIdElement}
           />
         </div>
         <div className="mb-3  ">
@@ -25,6 +27,7 @@ function CreatePost() {
             className="form-control"
             id="title"
             placeholder="How are you feeling"
+            ref={titleElement}
           />
         </div>
         <div className="mb-3  ">
