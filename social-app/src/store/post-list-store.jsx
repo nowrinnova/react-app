@@ -19,7 +19,7 @@ const postListReducer = (currPostList, action) => {
   return newPostList;
 };
 const PostListProvider = ({ children }) => {
-  const [postList, dispatch] = useReducer(postListReducer, DEFULT_POST_LIST);
+  const [postList, dispatch] = useReducer(postListReducer, []);
   const addPost = (userId,title,body,reactions,hastag) => {
     console.log(`${userId}  ${title} ${ body} ${reactions} ${hastag}`)
 
@@ -50,22 +50,22 @@ const PostListProvider = ({ children }) => {
     </PostList.Provider>
   );
 };
-const DEFULT_POST_LIST = [
-  {
-    id: "1",
-    userId:"user-19",
-    title: "Going to Mumbai for celebrating vacation",
-    body: "go to bed",
-    hastag: ["vacation", "happy"],
-    reactions: "3",
-  },
-  {
-    id: "2",
-    userId:'user-9',
-    title: "hi",
-    body: "go to bed",
-    hastag: ["sleepMood", "GoodNight"],
-    reaction: "19",
-  },
-];
+// const DEFULT_POST_LIST = [
+//   {
+//     id: "1",
+//     userId:"user-19",
+//     title: "Going to Mumbai for celebrating vacation",
+//     body: "go to bed",
+//     hastag: ["vacation", "happy"],
+//     reactions: "3",
+//   },
+//   {
+//     id: "2",
+//     userId:'user-9',
+//     title: "hi",
+//     body: "go to bed",
+//     hastag: ["sleepMood", "GoodNight"],
+//     reaction: "19",
+//   },
+// ];
 export default PostListProvider;
