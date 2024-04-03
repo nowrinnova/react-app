@@ -15,7 +15,7 @@ function CreatePost() {
     const title = titleElement.current.value;
     const body = bodyElement.current.value;
     const reactions = reactionsElement.current.value;
-    const hastag = hastagElement.current.value.split(/(\s+)/);
+    const hastag = hastagElement.current.value.split(" ");
     addPost(userId,title,body,reactions,hastag)
   };
   

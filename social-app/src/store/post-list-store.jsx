@@ -31,7 +31,7 @@ const PostListProvider = ({ children }) => {
         title: title,
         body:body,
         reactions: reactions,
-        hastag: [hastag],
+        hastag: hastag,
         
       }
     })
