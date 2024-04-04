@@ -1,13 +1,10 @@
 import React from "react";
 
-function WelcomeMassage({onGetPostClick}) {
+function WelcomeMassage() {
   return (
-    
-      <center>
-        <h1>There is no post avaiable </h1>
-<button onClick={onGetPostClick}>submit</button>
-      </center>
-    
+    <center>
+      <h1>There is no post avaiable </h1>
+    </center>
   );
 }
 
