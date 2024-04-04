@@ -18,11 +18,11 @@ function Post({ post }) {
           </h5>
           <p className="card-text">{post.body}</p>
 
-          {post.hastag.map((tag) => (
+          {post.tags.map((tag) => (
             <span className="badge text-bg-primary hastag" key={tag} >{tag}</span>
           ))}
           <div className="alert alert-primary reaction" role="alert">
-            This post is reacted by {post.reaction} people
+            This post is reacted by {post.reactions} people
           </div>
         </div>
       </div>
