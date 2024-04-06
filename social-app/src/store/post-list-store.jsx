@@ -1,4 +1,4 @@
-import { createContext, useReducer } from "react";
+import { createContext, useEffect, useReducer, useState } from "react";
 
 export const PostList = createContext({
   postList: [],
@@ -8,31 +8,30 @@ export const PostList = createContext({
 });
 
 const postListReducer = (currPostList, action) => {
+  console.log(action)
   let newPostList = currPostList;
   if (action.type === "Delete_Post") {
     newPostList = currPostList.filter(
       (post) => post.id !== action.payload.postId
     );
-  } else if (action.type === "Add_Initial_Post") {
+  }
+
+   else if (action.type === "Add_Initial_Post") {
     newPostList = action.payload.posts
-  } else if (action.type === "Add_Post") {
+  } 
+  
+  else if (action.type === "Add_Post") {
     newPostList = [action.payload, ...currPostList];
   }
   return newPostList;
 };
 const PostListProvider = ({ children }) => {
   const [postList, dispatch] = useReducer(postListReducer, []);
-  const addPost = (userId, title, body, reactions, tags) => {
+  const addPost = (post) => {
     dispatch({
       type: "Add_Post",
-      payload: {
-        id: Math.random(),
-        userId: userId,
-        title: title,
-        body: body,
-        reactions: reactions,
-        tags: tags,
-      },
+      payload: post
+        
     });
   };
   const addInitialPosts = (posts) => {
@@ -49,6 +48,17 @@ const PostListProvider = ({ children }) => {
       },
     });
   };
+  const [fatch, setFetch] = useState(false);
+
+  useEffect(() => {
+    setFetch(true);
+    fetch("https://dummyjson.com/posts")
+      .then((res) => res.json())
+      .then((data) => {
+        addInitialPosts(data.posts);
+        setFetch(false);
+      });
+  }, []);
   return (
     <PostList.Provider
       value={{ postList, addPost, addInitialPosts, deletePost }}

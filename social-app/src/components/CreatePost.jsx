@@ -2,12 +2,12 @@ import React, { useContext, useRef } from "react";
 import { PostList } from "../store/post-list-store";
 
 function CreatePost() {
-  const{addPost}= useContext(PostList)
+  const { addPost } = useContext(PostList);
   const userIdElement = useRef();
   const titleElement = useRef();
   const bodyElement = useRef();
   const reactionsElement = useRef();
-  const hastagElement = useRef();
+  const tagsElement = useRef();
 
   const handleOnSubmit = (event) => {
     event.preventDefault();
@@ -15,11 +15,25 @@ function CreatePost() {
     const title = titleElement.current.value;
     const body = bodyElement.current.value;
     const reactions = reactionsElement.current.value;
-    const hastag = hastagElement.current.value.split(" ");
-    addPost(userId,title,body,reactions,hastag)
+    const tags = tagsElement.current.value.split(" ");
+
+    fetch("https://dummyjson.com/posts/add", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        userId: userId,
+        title: title,
+        body: body,
+        reactions: reactions,
+        tags: tags,
+        /* other post data */
+      }),
+    })
+      .then((res) => res.json())
+      .then((post) => {
+        addPost(post);
+      });
   };
-  
-   
 
   return (
     <div>
@@ -83,7 +97,7 @@ function CreatePost() {
               className="form-control"
               id="hastag"
               placeholder="Enter your tag using space"
-              ref={hastagElement}
+              ref={tagsElement}
             />
           </div>
           <button type="submit" className="btn btn-primary">
