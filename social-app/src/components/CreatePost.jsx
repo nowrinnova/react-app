@@ -100,7 +100,8 @@ function CreatePost() {
               ref={tagsElement}
             />
           </div>
-          <button type="submit" className="btn btn-primary">
+          <button type="submit" className="btn btn-primary"  >
+            
             Post
           </button>
         </div>
