@@ -4,6 +4,10 @@
 .hastag{
   margin-right: 5px;
 }
+.sidebar{
+  overflow-y: auto; /* Enable vertical scrolling */
+  min-height: 100%;
+}
 .reaction{
   margin-top: 15px;
 }
