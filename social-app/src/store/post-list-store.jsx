@@ -26,7 +26,9 @@ const postListReducer = (currPostList, action) => {
 };
 const PostListProvider = ({ children }) => {
   const [postList, dispatch] = useReducer(postListReducer, []);
+
   const addPost = (post) => {
+    console.log(post)
     dispatch({
       type: "Add_Post",
       payload: post

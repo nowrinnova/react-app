@@ -5,7 +5,7 @@ import App from "./routes/App.jsx";
 import "./index.css";
 import "bootstrap/dist/css/bootstrap.min.css";
 import PostList from "./components/PostList.jsx";
-import CreatePost from "./components/CreatePost.jsx";
+import CreatePost, { createPostAction } from "./components/CreatePost.jsx";
 
 const router = createBrowserRouter([
   {
@@ -13,7 +13,7 @@ const router = createBrowserRouter([
     element: <App />,
     children: [
       { path: "/", element: <PostList /> },
-      { path: "/create-post", element: <CreatePost /> },
+      { path: "/create-post", element: <CreatePost /> ,action:createPostAction },
     ],
   },
 ]);
