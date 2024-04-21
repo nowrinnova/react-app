@@ -1,4 +1,4 @@
-// import './App.css'
+import './App.css'
 import "bootstrap/dist/css/bootstrap.min.css";
 import DisplayCounter from "./components/DisplayCounter";
 import Header from "./components/Header";
