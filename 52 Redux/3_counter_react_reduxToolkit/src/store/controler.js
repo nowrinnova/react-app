@@ -1,13 +1,13 @@
 import { createSlice } from "@reduxjs/toolkit";
-const initialState = {
-  value: 0,
-};
 export const controlerSlice = createSlice({
   name: "controler",
-  initialState,
+  initialState:{ value: 0},
   reducers: {
     increment: (state, action) => {
-      console.log(state, action);
+      state.value+=1;
+      console.log(state.value)
+      
+
     },
     decrement: (state, action) => {
       console.log(state, action);
