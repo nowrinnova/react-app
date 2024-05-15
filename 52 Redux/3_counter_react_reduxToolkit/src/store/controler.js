@@ -1,18 +1,22 @@
 import { createSlice } from "@reduxjs/toolkit";
 export const controlerSlice = createSlice({
   name: "controler",
-  initialState:{ value: 0},
+  initialState: { value: 0 },
   reducers: {
     increment: (state, action) => {
-      state.value+=1;
-      console.log(state.value)
-      
-
+      state.value += 1;
     },
     decrement: (state, action) => {
-      console.log(state, action);
+      state.value -= 1;
     },
+    add5: (state) => {
+      state.value += 5;
+    },
+    add:(state,action)=>{
+      state.value+=Number(action.payload.num)
+  
+    }
   },
 });
-export const { increment, decrement } = controlerSlice.actions;
+export const { increment, decrement,add5,add  } = controlerSlice.actions;
 export default controlerSlice.reducer;
