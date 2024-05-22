@@ -15,8 +15,12 @@ export const controlerSlice = createSlice({
     add:(state,action)=>{
       state.value+=Number(action.payload.num)
   
+    },
+    sub:(state,action)=>{
+      state.value=state.value-Number(action.payload.num)
     }
+
   },
 });
-export const { increment, decrement,add5,add  } = controlerSlice.actions;
+export const { increment, decrement,add5,add ,sub } = controlerSlice.actions;
 export default controlerSlice.reducer;
