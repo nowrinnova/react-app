@@ -4,7 +4,7 @@ import Header from "./components/Header";
 import Container from "./components/Container";
 import Display from "./components/Display";
 import Buttons from "./components/Buttons";
-import Math from "./components/Math";
+
 function App() {
   return (
     <>
@@ -13,7 +13,7 @@ function App() {
         <Display></Display>
         <Buttons></Buttons>
       </Container>
-      <Math></Math>
+      
     </>
   );
 }
