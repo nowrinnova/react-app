@@ -12,13 +12,23 @@ export const displaySlice =createSlice({
   initialState:{
     array:[],
     loading:false,
-    error:false,
+    error:null,
   },
   reducers:{
   },
-  extraReducers:{
-    
-  }
+  // extraReducers:{
+  //   [getData.pending]:(state)=>{
+  //     state.loading=true;
+  //   },
+  //   [getData.fulfilled]:(state,action)=>{
+  //     state.loading=false;
+  //     state.array=action.payload
+  //   },
+  //   [getData.rejected]:(state,action)=>{
+  //     state.error=true;
+  //   },
+
+  // }
 
 })
 // export const {storeItem} =displaySlice.actions;
